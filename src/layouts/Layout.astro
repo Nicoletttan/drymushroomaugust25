@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon_strawberry.jpg" />
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon_strawberry.jpg`} />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro Basics</title>
 	</head>
@@ -13,12 +13,12 @@
 		<div id="sparkle-container"></div>
         <script>
             // Change cursor to strawberry GIF
-            document.body.style.cursor = 'url("/strawberry_cursor1.png"), auto';
+            document.body.style.cursor = 'url("' + import.meta.env.BASE_URL + '/strawberry_cursor1.png"), auto';
 
             // Sparkle effect on click
             document.addEventListener('click', function(e) {
                 const sparkle = document.createElement('img');
-                sparkle.src = '/sparkle2.gif'; // Place your sparkle gif in public folder
+                sparkle.src = import.meta.env.BASE_URL + '/sparkle2.gif'; // Place your sparkle gif in public folder
                 sparkle.style.position = 'absolute';
                 sparkle.style.left = (e.pageX - 16) + 'px';
                 sparkle.style.top = (e.pageY - 16) + 'px';
